@@ -6,7 +6,7 @@
 /*   By: jaelee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 15:24:17 by jaelee            #+#    #+#             */
-/*   Updated: 2018/11/08 15:31:10 by jaelee           ###   ########.fr       */
+/*   Updated: 2018/11/10 19:17:35 by jaelee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 		return (tmp1);
 	i = 0;
 	cnt = 0;
-	while (tmp1[i] && i < n)
+	while (tmp1[i] != '\0' && i < n)
 	{
 		while (tmp1[i + cnt] == tmp2[cnt] && (i + cnt) < n)
 		{

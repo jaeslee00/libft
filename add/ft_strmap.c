@@ -6,7 +6,7 @@
 /*   By: jaelee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 12:00:02 by jaelee            #+#    #+#             */
-/*   Updated: 2018/11/10 17:23:44 by jaelee           ###   ########.fr       */
+/*   Updated: 2018/11/10 19:41:24 by jaelee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	if (s && f)
 	{
 		ptr = ft_strnew(len);
+		if (!(ptr))
+			return (NULL);
 		while (i < len && s[i])
 		{
 			ptr[i] = f(s[i]);

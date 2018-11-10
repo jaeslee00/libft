@@ -6,7 +6,7 @@
 /*   By: jaelee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 10:31:05 by jaelee            #+#    #+#             */
-/*   Updated: 2018/11/10 17:13:39 by jaelee           ###   ########.fr       */
+/*   Updated: 2018/11/10 19:41:49 by jaelee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ char	*ft_strnew(size_t size)
 {
 	char *str;
 
+	str = (NULL);
 	if (!(str = (char *)malloc(sizeof(char) * (size + 1))))
 		return (NULL);
 	ft_bzero(str, size);

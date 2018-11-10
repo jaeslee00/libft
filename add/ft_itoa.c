@@ -6,13 +6,13 @@
 /*   By: jaelee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 17:54:22 by jaelee            #+#    #+#             */
-/*   Updated: 2018/11/10 17:47:18 by jaelee           ###   ########.fr       */
+/*   Updated: 2018/11/10 19:49:05 by jaelee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_digit(int n)
+static int		ft_digit(int n)
 {
 	int	cnt;
 	int	tmp;
@@ -31,16 +31,11 @@ static int	ft_digit(int n)
 	return (cnt);
 }
 
-char		*ft_itoa(int n)
+static char		*ft_nbr_to_char(int n, char *val, int len)
 {
-	char	*val;
-	int		tmp;
-	int		len;
+	int	tmp;
 
 	tmp = n;
-	len = ft_digit(n);
-	val = ft_memalloc(len + 1);
-	if(!(val))
 	val[len] = '\0';
 	while (len >= 0)
 	{
@@ -58,5 +53,18 @@ char		*ft_itoa(int n)
 		if (n < 0)
 			val[0] = '-';
 	}
+	return (val);
+}
+
+char			*ft_itoa(int n)
+{
+	char	*val;
+	int		len;
+
+	len = ft_digit(n);
+	val = ft_memalloc(len + 1);
+	if (!(val))
+		return (NULL);
+	val = ft_nbr_to_char(n, val, len);
 	return (val);
 }

@@ -6,7 +6,7 @@
 /*   By: jaelee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 14:10:33 by jaelee            #+#    #+#             */
-/*   Updated: 2018/11/10 11:57:52 by jaelee           ###   ########.fr       */
+/*   Updated: 2018/11/10 17:58:50 by jaelee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	if (*s)
 	{
 		ptr = ft_memalloc(len + 1);
+		if (!(ptr))
+			return (NULL);
 		while (i < len && s[start])
 		{
 			ptr[i] = s[start];
