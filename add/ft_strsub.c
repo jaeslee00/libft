@@ -6,7 +6,7 @@
 /*   By: jaelee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 14:10:33 by jaelee            #+#    #+#             */
-/*   Updated: 2018/11/10 17:58:50 by jaelee           ###   ########.fr       */
+/*   Updated: 2018/11/11 13:58:10 by jaelee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,17 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	char	*ptr;
 	size_t	i;
 
+	if (!s)
+		return (NULL);
 	i = 0;
-	if (*s)
+	if (!(ptr = ft_memalloc(len + 1)))
+		return (NULL);
+	while (i < len && s[start])
 	{
-		ptr = ft_memalloc(len + 1);
-		if (!(ptr))
-			return (NULL);
-		while (i < len && s[start])
-		{
-			ptr[i] = s[start];
-			i++;
-			start++;
-		}
-		ptr[i] = '\0';
-		return (ptr);
+		ptr[i] = s[start];
+		i++;
+		start++;
 	}
-	return (NULL);
+	ptr[i] = '\0';
+	return (ptr);
 }

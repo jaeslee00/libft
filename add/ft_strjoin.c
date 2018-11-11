@@ -6,7 +6,7 @@
 /*   By: jaelee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 14:47:16 by jaelee            #+#    #+#             */
-/*   Updated: 2018/11/10 18:20:49 by jaelee           ###   ########.fr       */
+/*   Updated: 2018/11/11 13:58:47 by jaelee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,20 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	i;
 	size_t	j;
 
+	if (!(s1 && s2))
+		return (NULL);
 	i = ft_strlen(s1);
 	j = 0;
 	len = ft_strlen(s1) + ft_strlen(s2);
-	if (s1 && s2)
+	ptr = ft_strsub(s1, 0, len + 1);
+	if (!(ptr))
+		return (NULL);
+	while (i < len && s2[j])
 	{
-		ptr = ft_strsub(s1, 0, len + 1);
-		if (!(ptr))
-			return (NULL);
-		while (i < len && s2[j])
-		{
-			ptr[i] = s2[j];
-			i++;
-			j++;
-		}
-		ptr[i] = '\0';
-		return (ptr);
+		ptr[i] = s2[j];
+		i++;
+		j++;
 	}
-	return (NULL);
+	ptr[i] = '\0';
+	return (ptr);
 }

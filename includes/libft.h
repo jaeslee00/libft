@@ -6,7 +6,7 @@
 /*   By: jaelee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 11:07:06 by jaelee            #+#    #+#             */
-/*   Updated: 2018/11/10 18:07:55 by jaelee           ###   ########.fr       */
+/*   Updated: 2018/11/11 14:08:52 by jaelee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 void	ft_putchar(char c);
 void	ft_putstr(char const *s);
-void	ft_putnbr(int n);
 char	*ft_itoa(int n);
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
