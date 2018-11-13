@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaelee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/07 21:44:17 by jaelee            #+#    #+#             */
-/*   Updated: 2018/11/13 16:36:05 by jaelee           ###   ########.fr       */
+/*   Created: 2018/11/13 17:23:10 by jaelee            #+#    #+#             */
+/*   Updated: 2018/11/13 17:30:24 by jaelee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t size)
+char	*ft_strndup(const char *s1, size_t n)
 {
-	size_t strldst;
-	size_t strlsrc;
-	size_t i;
+	char	*tmp;
+	size_t	i;
+	size_t	len;
 
-	strldst = ft_strlen(dst);
-	strlsrc = ft_strlen(src);
+	len = ft_strlen(s1) + 1;
 	i = 0;
-	if (strldst >= size)
-		return (size + strlsrc);
-	while (src[i] != '\0' && i < size - strldst - 1)
+	if (!(tmp = (char*)malloc(sizeof(char) * len)))
+		return (NULL);
+	while (s1[i] != '\0' && i < n)
 	{
-		dst[strldst + i] = src[i];
+		tmp[i] = s1[i];
 		i++;
 	}
-	dst[strldst + i] = '\0';
-	return (strldst + strlsrc);
+	tmp[i] = '\0';
+	return (tmp);
 }

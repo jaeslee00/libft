@@ -6,7 +6,7 @@
 /*   By: jaelee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 11:07:06 by jaelee            #+#    #+#             */
-/*   Updated: 2018/11/13 11:47:52 by jaelee           ###   ########.fr       */
+/*   Updated: 2018/11/13 17:30:37 by jaelee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,10 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void			*ft_realloc(void *ptr, size_t size);
 void			ft_swapaddr(char **a, char **b);
 int				ft_pow(int a, int b);
-
+int				ft_factorial(int n);
+void			ft_putnbr_base(int nbr, char *base);
+size_t			ft_strlcpy(char *restrict dest, const char *restrict src,
+		size_t size);
+char			*ft_strndup(const char *s1, size_t n);
 
 #endif
