@@ -6,7 +6,7 @@
 #    By: jaelee <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 17:30:16 by jaelee            #+#    #+#              #
-#    Updated: 2018/11/12 15:09:23 by jaelee           ###   ########.fr        #
+#    Updated: 2018/11/14 10:56:19 by jaelee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,6 +70,13 @@ SRC =	./ft_atoi.c \
 		./ft_strtrim.c \
 		./ft_tolower.c \
 		./ft_toupper.c \
+		./ft_realloc.c \
+		./ft_swapaddr.c \
+		./ft_pow.c \
+		./ft_factorial.c \
+		./ft_putnbr_base.c \
+		./ft_strlcpy.c \
+		./ft_strndup.c
 
 FLAG = -Wall -Wextra -Werror
 OBJ = ./*.o
