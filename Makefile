@@ -6,7 +6,7 @@
 #    By: jaelee <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 17:30:16 by jaelee            #+#    #+#              #
-#    Updated: 2018/11/14 10:56:19 by jaelee           ###   ########.fr        #
+#    Updated: 2018/11/17 12:58:24 by jaelee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRC =	./ft_atoi.c \
 		./ft_lstdelone.c \
 		./ft_lstiter.c \
 		./ft_lstnew.c \
+		./ft_lstmap.c \
 		./ft_memalloc.c \
 		./ft_memccpy.c \
 		./ft_memchr.c \
