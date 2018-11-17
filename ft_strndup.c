@@ -6,13 +6,18 @@
 /*   By: jaelee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 17:23:10 by jaelee            #+#    #+#             */
-/*   Updated: 2018/11/13 17:30:24 by jaelee           ###   ########.fr       */
+/*   Updated: 2018/11/17 13:49:53 by jaelee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strndup(const char *s1, size_t n)
+static int	ft_min(size_t a, size_t b)
+{
+	return (a >= b ? b : a);
+}
+
+char		*ft_strndup(const char *s1, size_t n)
 {
 	char	*tmp;
 	size_t	i;
@@ -20,7 +25,7 @@ char	*ft_strndup(const char *s1, size_t n)
 
 	len = ft_strlen(s1) + 1;
 	i = 0;
-	if (!(tmp = (char*)malloc(sizeof(char) * len)))
+	if (!(tmp = (char*)malloc(sizeof(char) * ft_min(n + 1, len))))
 		return (NULL);
 	while (s1[i] != '\0' && i < n)
 	{
