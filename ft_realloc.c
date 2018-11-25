@@ -6,7 +6,7 @@
 /*   By: jaelee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 11:33:36 by jaelee            #+#    #+#             */
-/*   Updated: 2018/11/13 11:46:54 by jaelee           ###   ########.fr       */
+/*   Updated: 2018/11/21 14:52:37 by jaelee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,19 @@ void	*ft_realloc(void *ptr, size_t size)
 	tmp = NULL;
 	if (ptr && !size)
 	{
-		if (!(tmp = (char *)malloc(1)))
+		if (!(tmp = (char *)ft_memalloc(1)))
 			return (NULL);
 		ft_memdel(&ptr);
 	}
-	if (!(tmp = (char *)malloc(size)))
-		return (NULL);
-	if (ptr)
+	else if (size)
 	{
-		ft_memcpy(tmp, ptr, size);
-		ft_memdel(&ptr);
+		if (!(tmp = (char *)ft_memalloc(size)))
+			return (NULL);
+		if (ptr)
+		{
+			ft_memcpy(tmp, ptr, size);
+			ft_memdel(&ptr);
+		}
 	}
 	return (tmp);
 }

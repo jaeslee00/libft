@@ -6,7 +6,7 @@
 /*   By: jaelee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 17:03:00 by jaelee            #+#    #+#             */
-/*   Updated: 2018/11/11 14:09:49 by jaelee           ###   ########.fr       */
+/*   Updated: 2018/11/25 19:38:32 by jaelee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@ char	**ft_strsplit(char const *s, char c)
 	int		end;
 	char	**array;
 
-	if (!(s && c))
+	if (!(s && c) || (i = 0))
 		return (NULL);
-	i = 0;
 	j = 0;
 	if (!(array = (char **)malloc(sizeof(char *) * ft_strlen(s))))
 		return (NULL);
@@ -35,7 +34,8 @@ char	**ft_strsplit(char const *s, char c)
 			i++;
 		end = i;
 		if (end > start)
-			array[j++] = ft_strsub(s, start, end - start);
+			if (!(array[j++] = ft_strsub(s, start, end - start)))
+				return (NULL);
 	}
 	array[j] = (NULL);
 	return (array);

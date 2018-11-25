@@ -6,16 +6,11 @@
 /*   By: jaelee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 17:23:10 by jaelee            #+#    #+#             */
-/*   Updated: 2018/11/17 13:49:53 by jaelee           ###   ########.fr       */
+/*   Updated: 2018/11/24 21:25:20 by jaelee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_min(size_t a, size_t b)
-{
-	return (a >= b ? b : a);
-}
 
 char		*ft_strndup(const char *s1, size_t n)
 {

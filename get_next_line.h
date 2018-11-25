@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaelee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/07 13:10:17 by jaelee            #+#    #+#             */
-/*   Updated: 2018/11/24 18:28:10 by jaelee           ###   ########.fr       */
+/*   Created: 2018/11/14 09:16:13 by jaelee            #+#    #+#             */
+/*   Updated: 2018/11/25 19:31:52 by jaelee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# include "libft.h"
+# define BUFF_SIZE 1
+# define FD_NBR 10000
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
-{
-	size_t			i;
-	unsigned char	*tmp1;
-	unsigned char	*tmp2;
+int				get_next_line(const int fd, char **line);
 
-	tmp1 = (unsigned char *)dst;
-	tmp2 = (unsigned char *)src;
-	i = 0;
-	while (i < n)
-	{
-		tmp1[i] = tmp2[i];
-		if (tmp2[i] == (unsigned char)c)
-			return (tmp1 + i + 1);
-		i++;
-	}
-	return (NULL);
-}
+#endif

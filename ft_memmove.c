@@ -6,7 +6,7 @@
 /*   By: jaelee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 13:36:35 by jaelee            #+#    #+#             */
-/*   Updated: 2018/11/13 10:51:10 by jaelee           ###   ########.fr       */
+/*   Updated: 2018/11/25 19:34:59 by jaelee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,12 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		}
 	}
 	else
+	{
 		while (len > 0)
 		{
 			*tmp1++ = *tmp2++;
 			len--;
 		}
+	}
 	return (dst);
 }

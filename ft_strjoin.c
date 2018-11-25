@@ -6,7 +6,7 @@
 /*   By: jaelee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 14:47:16 by jaelee            #+#    #+#             */
-/*   Updated: 2018/11/11 13:58:47 by jaelee           ###   ########.fr       */
+/*   Updated: 2018/11/24 18:30:59 by jaelee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i = ft_strlen(s1);
 	j = 0;
 	len = ft_strlen(s1) + ft_strlen(s2);
-	ptr = ft_strsub(s1, 0, len + 1);
+	if (!(ptr = ft_strsub(s1, 0, len + 1)))
+		return (NULL);
 	if (!(ptr))
 		return (NULL);
 	while (i < len && s2[j])

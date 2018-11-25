@@ -6,13 +6,13 @@
 /*   By: jaelee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 12:19:34 by jaelee            #+#    #+#             */
-/*   Updated: 2018/11/13 10:50:45 by jaelee           ###   ########.fr       */
+/*   Updated: 2018/11/24 18:27:24 by jaelee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	char	*tmp1;
 	char	*tmp2;

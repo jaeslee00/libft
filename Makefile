@@ -6,7 +6,7 @@
 #    By: jaelee <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 17:30:16 by jaelee            #+#    #+#              #
-#    Updated: 2018/11/17 12:58:24 by jaelee           ###   ########.fr        #
+#    Updated: 2018/11/25 19:31:22 by jaelee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,19 +77,22 @@ SRC =	./ft_atoi.c \
 		./ft_factorial.c \
 		./ft_putnbr_base.c \
 		./ft_strlcpy.c \
-		./ft_strndup.c
-
+		./ft_strndup.c \
+		./ft_min.c \
+		./ft_max.c \
+		./get_next_line.c
 FLAG = -Wall -Wextra -Werror
-OBJ = ./*.o
+OBJ = $(SRC:.c=.o)
 HEADER = ./
 
 all: $(NAME)
 
-$(NAME):
-	gcc $(FLAG) -c  $(SRC) -I $(HEADER)
+$(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
+%.o: %.c
+	gcc $(FLAG) -c  $(SRC) -I $(HEADER)
 
 clean:
 	rm -f $(OBJ)
