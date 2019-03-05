@@ -6,7 +6,7 @@
 #    By: jaelee <jaelee@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 17:30:16 by jaelee            #+#    #+#              #
-#    Updated: 2019/03/05 02:35:52 by jaelee           ###   ########.fr        #
+#    Updated: 2019/03/05 02:49:10 by jaelee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -107,7 +107,8 @@ SRCS =	ft_atoi.c \
 		tree/tree_search.c \
 		tree/tree_pre_traverse.c \
 		tree/tree_in_traverse.c \
-		tree/tree_post_traverse.c
+		tree/tree_post_traverse.c \
+		priority_queue/priority_queue.c
 OBJS = $(patsubst %.c,obj/%.o,$(SRCS))
 CC = gcc
 ifndef CFLAGS_WARNINGS
@@ -119,8 +120,9 @@ INCLUDES = includes/libft.h \
 		includes/get_next_line.h \
 		includes/array.h \
 		includes/queue.h \
-		includes/tree.h
-INCLUDE_FOLDERS = -I./includes/
+		includes/tree.h \
+		includes/priority_queue.h
+INCLUDE_FOLDERS = -Iincludes/
 NAME = libft.a
 
 .PHONY: clean fclean re all
@@ -136,6 +138,7 @@ obj:
 	mkdir -p obj/array
 	mkdir -p obj/queue
 	mkdir -p obj/tree
+	mkdir -p obj/priority_queue
 
 obj/%.o: %.c $(INCLUDES) | obj
 	gcc $(CFLAGS) $(INCLUDE_FOLDERS) -c $< -o $@
