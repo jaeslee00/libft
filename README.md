@@ -1,6 +1,6 @@
-#**LIBFT**
+# **LIBFT**
 
-##personal C library used for projects in 42
+## personal C library used for projects in 42
 <hr>
 
 * all .h files and inside includes
@@ -12,5 +12,5 @@
 	* priority queue
 	* red-black self-balancing tree
 
-##installation:
+## installation
 'make' command in the root directory will create libft.a file
